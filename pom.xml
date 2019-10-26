@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -13,4 +13,18 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <modules>
+    <module>spring-cloud-sleuth</module>
+    <module>spring-cloud-api-gateway</module>
+    <module>spring-cloud-boot</module>
+    <module>spring-cloud-eureka-server</module>
+    <module>spring-cloud-feign-consumer</module>
+    <module>spring-cloud-hello-service</module>
+    <module>spring-cloud-hystrix-dashboard</module>
+    <module>spring-cloud-ribbon-consumer</module>
+    <module>spring-cloud-service-api</module>
+    <module>spring-cloud-turbine</module>
+  </modules>
+
 </project>
