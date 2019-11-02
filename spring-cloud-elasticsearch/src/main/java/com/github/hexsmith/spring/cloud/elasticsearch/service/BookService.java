@@ -2,9 +2,9 @@ package com.github.hexsmith.spring.cloud.elasticsearch.service;
 
 import java.util.List;
 
+import org.elasticsearch.index.query.QueryBuilder;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 
 import com.github.hexsmith.spring.cloud.elasticsearch.model.Book;
 
@@ -69,6 +69,6 @@ public interface BookService {
      * @param pageRequest 分页条件
      * @return 书籍列表
      */
-    Page<Book> search(NativeSearchQuery queryBuilder, PageRequest pageRequest);
+    Page<Book> search(QueryBuilder queryBuilder, PageRequest pageRequest);
 
 }

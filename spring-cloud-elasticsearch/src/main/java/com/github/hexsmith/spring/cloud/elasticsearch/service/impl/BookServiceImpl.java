@@ -6,7 +6,6 @@ import org.elasticsearch.index.query.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.stereotype.Service;
 
 import com.github.hexsmith.spring.cloud.elasticsearch.model.Book;
@@ -101,7 +100,7 @@ public class BookServiceImpl implements BookService {
      * @return 书籍列表
      */
     @Override
-    public Page<Book> search(NativeSearchQuery queryBuilder, PageRequest pageRequest) {
-        return bookRepository.search((QueryBuilder) queryBuilder, pageRequest);
+    public Page<Book> search(QueryBuilder queryBuilder, PageRequest pageRequest) {
+        return bookRepository.search(queryBuilder, pageRequest);
     }
 }

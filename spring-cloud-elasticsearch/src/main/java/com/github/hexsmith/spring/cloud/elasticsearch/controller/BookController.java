@@ -2,11 +2,10 @@ package com.github.hexsmith.spring.cloud.elasticsearch.controller;
 
 import javax.annotation.Resource;
 
-import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,9 +39,8 @@ public class BookController {
 
     @GetMapping("/search")
     public Page<Book> search(@RequestParam(name = "key") String searchKey) {
-        NativeSearchQueryBuilder queryBuilder = new NativeSearchQueryBuilder();
-        queryBuilder.withQuery(QueryBuilders.matchQuery("author", searchKey));
-        return bookService.search(queryBuilder.build(), PageRequest.of(0, 20));
+        MatchQueryBuilder queryBuilder = new MatchQueryBuilder("author", searchKey);
+        return bookService.search(queryBuilder, PageRequest.of(0, 20));
     }
 
 
