@@ -25,6 +25,7 @@
     <module>spring-cloud-ribbon-consumer</module>
     <module>spring-cloud-service-api</module>
     <module>spring-cloud-turbine</module>
+    <module>spring-cloud-elasticsearch</module>
   </modules>
 
 </project>
